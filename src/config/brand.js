@@ -11,7 +11,7 @@ export const brandConfig = {
   tagline: "Contemporary fashion. Timeless confidence.",
   heroHeadline: "DEFINE YOUR STYLE.",
   heroSubheadline: "Contemporary fashion. Timeless confidence.",
-  
+
   // Logos
   logos: {
     primary: "/images/ryva-logo.svg",
@@ -31,7 +31,7 @@ export const brandConfig = {
   // Set to real 10/12 digit international number when ready e.g. "919876543210"
   whatsapp: {
     enabled: true,
-    phoneNumber: "919876543210", // Placeholder demo business number
+    phoneNumber: "919670770767", // Placeholder demo business number
     isPlaceholder: true, // Indicates to UI that this is demo/configurable
     fallbackInstagram: "https://instagram.com/ryvacollection01/",
     welcomeMessage: "Hello RYVA COLLECTION! I would like to enquire about your luxury collection.",
@@ -39,15 +39,15 @@ export const brandConfig = {
 
   // Contact Information (Configurable Placeholders)
   contact: {
-    email: "concierge@ryvacollection.com",
-    supportPhone: "+91 (0) 22 2640 8899",
+    email: "amit@gmail.com",
+    supportPhone: "+91 9670770767",
     businessHours: "Monday – Saturday: 10:00 AM – 8:00 PM IST",
     address: {
-      line1: "RYVA Studio & Flagship Showroom",
-      line2: "Linking Road, Bandra West",
-      city: "Mumbai",
-      state: "Maharashtra",
-      postalCode: "400050",
+      line1: "RYVA Collection & Flagship Showroom",
+      line2: "Pakarikala Road",
+      city: "Azamgarh",
+      state: "India",
+      postalCode: "276301",
       country: "India",
     },
   },

@@ -8,10 +8,10 @@ const Footer = ({ onOpenSizeGuide }) => {
   return (
     <footer className="ryva-footer">
       <div className="container">
-        
+
         {/* Main Footer Row */}
         <div className="row g-4 g-lg-5">
-          
+
           {/* Column 1: Brand & Logo */}
           <div className="col-12 col-md-6 col-lg-4">
             <Link to="/" className="d-inline-block mb-3" aria-label="RYVA Collection">
@@ -119,7 +119,8 @@ const Footer = ({ onOpenSizeGuide }) => {
         {/* Footer Bottom Row */}
         <div className="ryva-footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
           <div>
-            &copy; {new Date().getFullYear()} RYVA COLLECTION. All rights reserved.
+            &copy; {new Date().getFullYear()} RYVA COLLECTION. All rights reserved.<br />
+            Made By Nilesh
           </div>
 
           <div className="d-flex flex-wrap align-items-center gap-3 small">

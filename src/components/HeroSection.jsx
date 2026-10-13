@@ -1,19 +1,124 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Compass } from 'lucide-react';
+import { ArrowRight, Compass, Play, Pause, Volume2, VolumeX } from 'lucide-react';
 import { brandConfig } from '../config/brand';
 
+const LOOP_DURATION_SECONDS = 10;
+
 const HeroSection = () => {
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(true);
+  const [progress, setProgress] = useState(0);
+
+  // Ensure autoplay starts smoothly on mount
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.muted = true;
+      video.play().catch((err) => {
+        // Autoplay policy fallback
+        console.log('Autoplay deferred until interaction:', err);
+      });
+    }
+  }, []);
+
+  // 10-second automatic repeat loop logic
+  const handleTimeUpdate = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const current = video.currentTime;
+    
+    // Once playback reaches 10 seconds, smoothly loop back to 0
+    if (current >= LOOP_DURATION_SECONDS) {
+      video.currentTime = 0;
+      video.play().catch(() => {});
+      setProgress(0);
+    } else {
+      setProgress((current / LOOP_DURATION_SECONDS) * 100);
+    }
+  };
+
+  const togglePlayPause = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (isPlaying) {
+      video.pause();
+      setIsPlaying(false);
+    } else {
+      video.play().catch(() => {});
+      setIsPlaying(true);
+    }
+  };
+
+  const toggleMute = () => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const newMuted = !isMuted;
+    video.muted = newMuted;
+    setIsMuted(newMuted);
+  };
+
   return (
     <section className="ryva-hero">
-      {/* Background Editorial Image */}
-      <img
-        src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=2000&q=85"
-        alt="RYVA Collection Editorial SS25"
+      {/* 10-Second Auto-Repeating Editorial Background Video */}
+      <video
+        ref={videoRef}
         className="ryva-hero-bg"
-        loading="eager"
-      />
+        autoPlay
+        loop
+        muted={isMuted}
+        playsInline
+        poster="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=2000&q=85"
+        onTimeUpdate={handleTimeUpdate}
+        aria-label="RYVA Collection SS25 Runway Editorial Video"
+      >
+        <source src="/videos/hero-fashion.mp4" type="video/mp4" />
+        <source src="/videos/hero-fashion.webm" type="video/webm" />
+        {/* Fallback image for browsers that don't support HTML5 video */}
+        <img
+          src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=2000&q=85"
+          alt="RYVA Collection Editorial SS25"
+          className="ryva-hero-bg"
+        />
+      </video>
+
+      {/* Luxury Dark Vignette Overlay for Crisp Readability */}
       <div className="ryva-hero-overlay"></div>
+
+      {/* 10-Second Loop Progress Line */}
+      <div className="ryva-hero-video-bar" title="10-second editorial loop progression">
+        <div
+          className="ryva-hero-video-progress"
+          style={{ width: `${progress}%` }}
+        />
+      </div>
+
+      {/* Floating Video Controls */}
+      <div className="ryva-hero-video-controls d-none d-sm-flex">
+        <button
+          type="button"
+          className="ryva-video-btn"
+          onClick={togglePlayPause}
+          aria-label={isPlaying ? 'Pause video' : 'Play video'}
+          title={isPlaying ? 'Pause runway loop' : 'Play runway loop'}
+        >
+          {isPlaying ? <Pause size={15} /> : <Play size={15} />}
+        </button>
+
+        <button
+          type="button"
+          className="ryva-video-btn"
+          onClick={toggleMute}
+          aria-label={isMuted ? 'Unmute video' : 'Mute video'}
+          title={isMuted ? 'Unmute video' : 'Mute video'}
+        >
+          {isMuted ? <VolumeX size={15} /> : <Volume2 size={15} />}
+        </button>
+      </div>
 
       {/* Hero Content */}
       <div className="container ryva-hero-content">
