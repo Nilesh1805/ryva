@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" fill="none">
+  <!-- Outer Luxury Diamond Crest -->
+  <path d="M 50 4 L 96 50 L 50 96 L 4 50 Z" stroke="#B59A70" stroke-width="1.5" stroke-opacity="0.8"/>
+  <path d="M 50 9 L 91 50 L 50 91 L 9 50 Z" stroke="#B59A70" stroke-width="0.75" stroke-dasharray="2 3" stroke-opacity="0.5"/>
+  
+  <!-- Interlocking R and V Monogram -->
+  <g stroke-linecap="round" stroke-linejoin="round">
+    <!-- Letter R: Stem & Serifs -->
+    <path d="M 28 24 L 28 76" stroke="#151515" stroke-width="4.5" class="ryva-stroke-primary"/>
+    <path d="M 23 24 L 33 24" stroke="#151515" stroke-width="2.5" class="ryva-stroke-primary"/>
+    <path d="M 23 76 L 33 76" stroke="#151515" stroke-width="2.5" class="ryva-stroke-primary"/>
+    
+    <!-- Letter R: Bowl -->
+    <path d="M 28 24 C 52 24, 60 33, 60 44 C 60 54, 49 57, 28 57" stroke="#151515" stroke-width="4.5" class="ryva-stroke-primary"/>
+    
+    <!-- Diagonal stroke of R interweaving with V -->
+    <path d="M 44 54 L 62 76" stroke="#B59A70" stroke-width="4.5"/>
+    <path d="M 57 76 L 67 76" stroke="#B59A70" stroke-width="2.5"/>
+
+    <!-- Letter V: Luxury Serif Angles -->
+    <path d="M 46 32 L 64 76 L 82 32" stroke="#B59A70" stroke-width="4" stroke-opacity="0.95"/>
+    <path d="M 41 32 L 51 32" stroke="#B59A70" stroke-width="2"/>
+    <path d="M 77 32 L 87 32" stroke="#B59A70" stroke-width="2"/>
+  </g>
+  <circle cx="50" cy="50" r="1.5" fill="#B59A70"/>
+</svg>

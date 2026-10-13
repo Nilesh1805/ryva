@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 52" width="260" height="52" fill="none">
+  <!-- Monogram Crest -->
+  <g transform="translate(6, 6) scale(0.4)">
+    <path d="M 50 4 L 96 50 L 50 96 L 4 50 Z" stroke="#B59A70" stroke-width="2"/>
+    <path d="M 28 24 L 28 76" stroke="#151515" stroke-width="5" stroke-linecap="round"/>
+    <path d="M 28 24 C 52 24, 60 33, 60 44 C 60 54, 49 57, 28 57" stroke="#151515" stroke-width="5" stroke-linecap="round"/>
+    <path d="M 44 54 L 62 76" stroke="#B59A70" stroke-width="5" stroke-linecap="round"/>
+    <path d="M 46 32 L 64 76 L 82 32" stroke="#B59A70" stroke-width="4.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Wordmark RYVA -->
+  <text x="64" y="32" font-family="'Cinzel', 'Playfair Display', 'Didot', 'Georgia', serif" font-size="26" font-weight="600" letter-spacing="4" fill="#151515">
+    RYVA
+  </text>
+
+  <!-- Decorative Separator Line -->
+  <line x1="64" y1="36" x2="248" y2="36" stroke="#B59A70" stroke-width="0.75" stroke-opacity="0.6"/>
+
+  <!-- Subtitle COLLECTION -->
+  <text x="65" y="46" font-family="'Montserrat', 'Inter', -apple-system, sans-serif" font-size="8" font-weight="500" letter-spacing="5.5" fill="#77736E">
+    COLLECTION
+  </text>
+</svg>

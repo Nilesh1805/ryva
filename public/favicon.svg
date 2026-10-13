@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
+  <rect width="40" height="40" rx="8" fill="#151515"/>
+  <rect x="2" y="2" width="36" height="36" rx="6" fill="none" stroke="#B59A70" stroke-width="1" stroke-opacity="0.4"/>
+  <!-- Interlocking R and V Monogram -->
+  <g transform="translate(7.5, 7.5) scale(0.625)" stroke-linecap="round" stroke-linejoin="round">
+    <!-- R Stem & Bowl -->
+    <path d="M 6 4 L 6 36" stroke="#F5F0E8" stroke-width="3.2"/>
+    <path d="M 6 4 C 18 4, 25 10, 25 18 C 25 25, 17 28, 6 28" fill="none" stroke="#F5F0E8" stroke-width="3.2"/>
+    <!-- Interlocking Diagonal to V -->
+    <path d="M 17 24 L 28 36" stroke="#B59A70" stroke-width="3.2"/>
+    <!-- V Wings -->
+    <path d="M 18 8 L 28 36 L 38 8" fill="none" stroke="#B59A70" stroke-width="3.2"/>
+  </g>
+</svg>
